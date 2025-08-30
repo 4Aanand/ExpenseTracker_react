@@ -20,7 +20,7 @@ function App() {
     <main>
       <div className='Header'>
         <div className="image">
-          <img className='spend' src="src/images/money.png" alt="" />
+          <img className='spend' src="https://cdn-icons-png.freepik.com/256/10758/10758836.png?semt=ais_white_label" alt="" />
         </div>
       <h1><span className='first'>Expense</span> <span className='second'>Tracker</span></h1>
       </div>
