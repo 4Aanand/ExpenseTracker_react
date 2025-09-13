@@ -12,6 +12,14 @@ export default function ExpenseTable({
   const [menuPosition, setMenuPosition] = useState({})
   const [rowId, setRowId] = useState('')
   const [sortCallback, setSortCallback] = useState(() => () => {})
+   const [searchName, setSearchName] = useState('') // 🔍 New state
+
+  // Filter by name in addition to category
+  const visibleExpenses = filteredData
+    .filter((item) =>
+      item.name.toLowerCase().includes(searchName.toLowerCase())
+    )
+    .sort(sortCallback)
 
   const total = filteredData.reduce(
     (accumulator, current) => accumulator + parseInt(current.amount),
@@ -151,7 +159,7 @@ export default function ExpenseTable({
       </td>
     </tr>
   ) : (
-    filteredData.sort(sortCallback).map(({ id, name, title, category, amount }) => (
+    visibleExpenses.sort(sortCallback).map(({ id, name, title, category, amount }) => (
       <tr
         key={id}
         onContextMenu={(e) => {
@@ -168,7 +176,8 @@ export default function ExpenseTable({
     ))
   )}
   <tr>
-    <th></th>
+    <th><input placeholder='SearchByName' value={searchName}
+                onChange={(e) => setSearchName(e.target.value)}/></th>
     <th className="clear-sort" onClick={() => setSortCallback(() => () => {})}>
       Clear Sort
     </th>
