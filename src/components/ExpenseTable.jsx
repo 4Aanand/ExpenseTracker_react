@@ -110,7 +110,7 @@ export default function ExpenseTable({
             </th>
           </tr>
         </thead>
-        <tbody>
+        {/* <tbody>
           {filteredData
             .sort(sortCallback)
             .map(({ id,name, title, category, amount }) => (
@@ -142,7 +142,41 @@ export default function ExpenseTable({
              <th>Total</th>
             <th>₹{total}</th>
           </tr>
-        </tbody>
+        </tbody> */}
+        <tbody>
+  {filteredData.length === 0 ? (
+    <tr>
+      <td colSpan="4" style={{ textAlign: "center", padding: "1rem" }}>
+        No expenses yet
+      </td>
+    </tr>
+  ) : (
+    filteredData.sort(sortCallback).map(({ id, name, title, category, amount }) => (
+      <tr
+        key={id}
+        onContextMenu={(e) => {
+          e.preventDefault();
+          setMenuPosition({ left: e.clientX + 4, top: e.clientY + 4 });
+          setRowId(id);
+        }}
+      >
+        <td>{name}</td>
+        <td>{title}</td>
+        <td>{category}</td>
+        <td>₹{amount}</td>
+      </tr>
+    ))
+  )}
+  <tr>
+    <th></th>
+    <th className="clear-sort" onClick={() => setSortCallback(() => () => {})}>
+      Clear Sort
+    </th>
+    <th>Total</th>
+    <th>₹{total}</th>
+  </tr>
+</tbody>
+
       </table>
     </>
   )
