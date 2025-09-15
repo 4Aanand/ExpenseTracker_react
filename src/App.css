@@ -57,6 +57,7 @@ h1 {
     border-collapse: collapse;
      align-self: flex-start;
      cursor: pointer;
+     height: auto;
 }
 
 .expense-table select {
@@ -132,6 +133,10 @@ h1 {
     font-size: 18px;
     font-family: inherit;
     margin-top: 8px;
+        border-radius: 8px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .context-menu {

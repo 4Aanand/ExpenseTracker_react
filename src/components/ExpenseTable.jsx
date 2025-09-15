@@ -85,6 +85,7 @@ export default function ExpenseTable({
                 <option value="bills">Bills</option>
                 <option value="education">Education</option>
                 <option value="medicine">Medicine</option>
+                <option value="others">Others</option>
               </select>
             </th>
             <th className="amount-column">
