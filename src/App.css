@@ -57,8 +57,9 @@ h1 {
   padding: 20px;
   background: #f0f4f8;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   font-family: 'Segoe UI', sans-serif;
+  background: #5389A2;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
 
 }
 .table-wrapper {
@@ -66,10 +67,10 @@ h1 {
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
       margin: 0px auto auto auto;
   padding: 20px;
-  background: #f0f4f8;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
   font-family: 'Segoe UI', sans-serif;
+   background: #5389A2;
 }
 
 .expense-table {
@@ -79,6 +80,7 @@ h1 {
   cursor: pointer;
   height: auto;
   min-width: 500px; /* Ensures table doesn't shrink too much */
+ background: #5389A2;
 }
 
 .expense-table th,
@@ -94,30 +96,14 @@ h1 {
   width: 100%;
   border: none;
   outline: none;
-      background: #f9f9f9;
+  background: #5389A2;
 }
-
-
-/* .expense-table {
-    width: 100%;
-    border-collapse: collapse;
-     align-self: flex-start;
-     cursor: pointer;
-     height: auto;
-}
-
-.expense-table select {
-    font: inherit;
-    width: 100%;
-    border: none;
-    outline: none;
-} */
 
 .amount-column div {
     display: flex;
 }
 .option{
-    background-color: #DDD0C8;
+     background: white;
 }
 
 .amount-column span {
@@ -150,7 +136,7 @@ h1 {
     border: 1px solid #444;
     text-align: left;
     padding: 4px 8px;
-        background: #f9f9f9;
+ background: #5389A2;
 }
 
 .input-container {
@@ -184,9 +170,12 @@ h1 {
   font-size: 16px;
   cursor: pointer;
 }
+.expense-form button:hover {
+  background: #0056b3;
+}
 
 .context-menu {
-    background-color: white;
+     background: #5389A2;
     border: 1px solid;
     position: absolute;
     border-radius: 4px;
@@ -220,14 +209,20 @@ h1 {
     outline: none;
     transition: border-color 0.3s ease;
     text-align: -webkit-auto;
+     background: #5389A2;
+}
+ .Filterbyname::placeholder{
+  color:black; /* Bright orange */
+  opacity: 1;     /* Ensures full visibility in Firefox */
+
 }
 .splitter-container {
   max-width: 320px;
   margin: 40px auto;
   padding: 20px;
-  background: #f0f4f8;
+ background: #5389A2;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
 }

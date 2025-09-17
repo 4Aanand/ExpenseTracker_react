@@ -21,7 +21,7 @@ export default function ExpenseTable({
     )
     .sort(sortCallback)
 
-  const total = filteredData.reduce(
+  const total = visibleExpenses.reduce(
     (accumulator, current) => accumulator + parseInt(current.amount),
     0
   )
