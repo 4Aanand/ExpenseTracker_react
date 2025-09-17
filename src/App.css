@@ -3,7 +3,7 @@
 body {
     font-family:  "Nunito", sans-serif;
     margin: 0 32px;
-     background-color: #DDD0C8;
+   background: linear-gradient(45deg, rgb(24, 104, 180), rgb(41, 91, 122), rgb(84, 138, 163));
 }
 
 main {
@@ -19,6 +19,7 @@ main {
   display: flex;
   align-items: center; /* Vertically centers items */
   height: 100px; /* Set a fixed height if needed */
+ 
 }
 
 .image {
@@ -37,22 +38,67 @@ h1 {
   line-height: 100px; /* Match the container height */
 }
 .first{
-    color: #6B0B42;
+    color: #95155d;
 }
 .second{
-    color: #444;
+    color: #6c0808c1;
 }
 
 .expense-tracker {
     display: flex;
     gap: 32px;
+        margin-top: 24px;
+          flex-direction: column;
 }
 
 .expense-form {
     width: 100%;
+    margin:auto;
+  padding: 20px;
+  background: #f0f4f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+
+}
+.table-wrapper {
+  width: 100%;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      margin: 0px auto auto auto;
+  padding: 20px;
+  background: #f0f4f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  align-self: flex-start;
+  cursor: pointer;
+  height: auto;
+  min-width: 500px; /* Ensures table doesn't shrink too much */
+}
+
+.expense-table th,
+.expense-table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.expense-table select {
+  font: inherit;
+  width: 100%;
+  border: none;
+  outline: none;
+      background: #f9f9f9;
+}
+
+
+/* .expense-table {
     width: 100%;
     border-collapse: collapse;
      align-self: flex-start;
@@ -65,7 +111,7 @@ h1 {
     width: 100%;
     border: none;
     outline: none;
-}
+} */
 
 .amount-column div {
     display: flex;
@@ -104,6 +150,7 @@ h1 {
     border: 1px solid #444;
     text-align: left;
     padding: 4px 8px;
+        background: #f9f9f9;
 }
 
 .input-container {
@@ -128,15 +175,14 @@ h1 {
 }
 
 .add-btn {
-    width: 100%;
-    height: 32px;
-    font-size: 18px;
-    font-family: inherit;
-    margin-top: 8px;
-        border-radius: 8px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+      width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .context-menu {
@@ -167,6 +213,55 @@ h1 {
     position: absolute;
     top: 100%;
 }
+.Filterbyname{
+    width:100%;
+    display: flex;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    text-align: -webkit-auto;
+}
+.splitter-container {
+  max-width: 320px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f0f4f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.splitter-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.splitter-container button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.splitter-container button:hover {
+  background: #0056b3;
+}
+
+.splitter-container p {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
 
 @media (max-width: 900px) {
     body {
@@ -185,5 +280,24 @@ h1 {
   margin: 0;
   font-size: 1rem; /* Adjust as needed */
   line-height: 70px; /* Match the container height */
+}
+}
+@media (max-width: 600px) {
+  .expense-table th,
+  .expense-table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .expense-table {
+    min-width: 100%;
+  }
+  .expense-table th,
+.expense-table td {
+  font-size: 10px;
+  font-weight: 500;
+}
+.table-wrapper {
+        overflow-x: auto;
 }
 }

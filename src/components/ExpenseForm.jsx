@@ -96,6 +96,7 @@ export default function ExpenseForm({
 
   return (
     <form className="expense-form" onSubmit={handleSubmit}>
+    
       <Input
         label="Name"
         id="name"
@@ -132,6 +133,7 @@ export default function ExpenseForm({
         error={errors.amount}
       />
       <button className="add-btn">{editingRowId ? 'Save' : 'Add'}</button>
+     
     </form>
   );
 }

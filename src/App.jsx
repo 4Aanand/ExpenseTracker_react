@@ -4,6 +4,7 @@ import ExpenseForm from './components/ExpenseForm'
 import ExpenseTable from './components/ExpenseTable'
 import expenseData from './expenseData'
 import { useLocalStorage } from './hooks/useLocalStorage'
+import BillSplitter from './components/BillSplitter'
 
 function App() {
   const [expense, setExpense] = useLocalStorage('expense',{
@@ -39,6 +40,7 @@ function App() {
           setEditingRowId={setEditingRowId}
         />
       </div>
+        <BillSplitter/>
     </main>
   )
 }

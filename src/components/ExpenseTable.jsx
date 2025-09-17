@@ -36,6 +36,7 @@ export default function ExpenseTable({
         rowId={rowId}
         setEditingRowId={setEditingRowId}
       />
+<div className='table-wrapper'>
       <table className="expense-table" onClick={() =>{
       if (menuPosition.left) {
             setMenuPosition({})
@@ -177,8 +178,11 @@ export default function ExpenseTable({
     ))
   )}
   <tr>
-    <th><input placeholder='SearchByName' value={searchName}
-                onChange={(e) => setSearchName(e.target.value)}/></th>
+    <th><div>
+       <input  className="Filterbyname"placeholder='SearchByName' value={searchName}
+                onChange={(e) => setSearchName(e.target.value)}/>
+    </div>
+     </th>
     <th className="clear-sort" onClick={() => setSortCallback(() => () => {})}>
       Clear Sort
     </th>
@@ -188,6 +192,7 @@ export default function ExpenseTable({
 </tbody>
 
       </table>
+      </div>
     </>
   )
 }
